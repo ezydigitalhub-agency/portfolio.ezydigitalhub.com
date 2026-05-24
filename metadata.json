@@ -1,0 +1,6 @@
+{
+  "name": "EZY Digital Hub",
+  "description": "High-fidelity landing page and interactive portfolio for EZY Digital Hub - Branding & Marketing Partner.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
