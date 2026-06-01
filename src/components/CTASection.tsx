@@ -48,47 +48,49 @@ export default function CTASection({ onRef }: CTASectionProps) {
       alert('Please select a preferred Date and Time slot.');
       return;
     }
+
+    // Direct emails as requested: ezydigitalhub@gmail.com and contact@ezydigitalhub.com
+    const recipients = "ezydigitalhub@gmail.com,contact@ezydigitalhub.com";
+    const subjectLine = `New Discovery Call Booking - ${formData.name}`;
+    const emailBody = 
+      `Hello EZY Digital Hub Team,\n\n` +
+      `Here is a new Book a Call / Book Discovery Session request received via your landing page:\n\n` +
+      `• Name: ${formData.name}\n` +
+      `• Contact Email: ${formData.email}\n` +
+      `• Company / Website: ${formData.company}\n` +
+      `• Preferred Date: ${selectedDate}\n` +
+      `• Preferred Time slot: ${selectedTime}\n\n` +
+      `Best regards,\n` +
+      `${formData.name}`;
+
+    const mailtoUrl = `mailto:${recipients}?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoUrl;
+
     setIsBooked(true);
   };
 
   const handleChatOption = (option: string) => {
-    // Append user msg
+    const whatsappText = encodeURIComponent(option);
+    window.open(`https://wa.me/+8801935623213?text=${whatsappText}`, '_blank');
+    
+    // Append user msg locally
     const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const userMsg = { sender: 'user' as const, text: option, time: timeString };
     setChatMessages(prev => [...prev, userMsg]);
-    setIsTyping(true);
-
-    // Simulated reply
-    setTimeout(() => {
-      let replyText = "";
-      if (option.includes("Branding")) {
-        replyText = "Awesome! Branding is our core obsession. Typically, a long-term branding track includes complete competitor audited styling guides, custom logo suites, and targeted copywriting. Would you like us to audit your current brand?";
-      } else if (option.includes("Price")) {
-        replyText = "Our packages are structured as transparent monthly partnerships starting around $2,500/mo. This gets you full access to a designer, marketing strategist, and creative lead. You can pause or cancel anytime!";
-      } else {
-        replyText = "Fabulous preference! Let's get down to business. I highly recommend booking a rapid 15-minute Discovery Audio call with our lead partner, so we can draft a tailored roadmap together.";
-      }
-
-      setChatMessages(prev => [...prev, { sender: 'agent' as const, text: replyText, time: timeString }]);
-      setIsTyping(false);
-    }, 1200);
   };
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputText.trim()) return;
 
+    // Direct WhatsApp redirection with prefilled message
+    const whatsappText = encodeURIComponent(inputText);
+    window.open(`https://wa.me/+8801935623213?text=${whatsappText}`, '_blank');
+
     const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const userMsg = { sender: 'user' as const, text: inputText, time: timeString };
     setChatMessages(prev => [...prev, userMsg]);
     setInputText('');
-    setIsTyping(true);
-
-    setTimeout(() => {
-      const replyText = "Thank you for sharing that! Our directors have been notified. Since we don't just design but build systems, our principal scale architect is reviewing your note. Let's lock in a virtual strategy audio call to finalize!";
-      setChatMessages(prev => [...prev, { sender: 'agent' as const, text: replyText, time: timeString }]);
-      setIsTyping(false);
-    }, 1500);
   };
 
   return (
@@ -121,8 +123,10 @@ export default function CTASection({ onRef }: CTASectionProps) {
             <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-4 w-full">
               
               {/* WhatsApp Button */}
-              <button
-                onClick={() => setShowChat(true)}
+              <a
+                href="https://wa.me/+8801935623213"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orange-hover text-white font-bold text-sm px-7 py-4.5 rounded-2xl shadow-lg shadow-brand-orange/20 hover:shadow-brand-orange/35 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer w-full text-center"
               >
                 {/* Embedded WhatsApp Vector Icon */}
@@ -130,7 +134,7 @@ export default function CTASection({ onRef }: CTASectionProps) {
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.18 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 2.01 14.069.99 11.519.99c-5.44 0-9.866 4.372-9.87 9.802 0 1.772.486 3.502 1.407 5.027L2.093 21.8l6.11-1.595h.057l.001.002z" />
                 </svg>
                 <span>Chat on WhatsApp</span>
-              </button>
+              </a>
 
               {/* Book Call Button */}
               <button

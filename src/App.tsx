@@ -12,13 +12,7 @@ export default function App() {
   const ctaTriggers = useRef<{ triggerWhatsApp: () => void; triggerBookCall: () => void } | null>(null);
 
   const handleContactAction = () => {
-    if (ctaTriggers.current) {
-      ctaTriggers.current.triggerWhatsApp();
-      
-      // Scroll smoothly to CTA section to make sure chat bubble is visible
-      const el = document.getElementById('contact-section');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.open('https://wa.me/+8801935623213', '_blank');
   };
 
   const handleBookAction = () => {

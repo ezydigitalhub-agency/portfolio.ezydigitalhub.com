@@ -118,21 +118,15 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button
-                onClick={onExploreWork}
-                className="flex items-center gap-2 bg-brand-navy hover:bg-brand-orange hover:shadow-brand-orange/20 text-white font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 group"
-              >
-                <span>Explore Our Work</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-              
-              <button
-                onClick={onExploreMainWebsite}
-                className="flex items-center gap-2 bg-white hover:bg-gray-50 text-brand-navy font-medium text-xs sm:text-sm px-6 py-3.5 rounded-full border border-gray-200 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md active:scale-95"
+              <a
+                href="https://ezydigitalhub.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-white hover:bg-gray-50 text-brand-navy font-medium text-xs sm:text-sm px-6 py-3.5 rounded-full border border-gray-200 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-md active:scale-95 cursor-pointer"
               >
                 <Globe className="w-4 h-4 text-gray-500" />
                 <span>Visit Main Website</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -370,44 +364,45 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
               </div>
 
               {/* Showcase items list */}
-              <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto">
-                {activeShowcase.items.map((item, idx) => (
-                  <div 
-                    key={idx}
-                    className="flex flex-col sm:flex-row gap-4 items-center p-3 rounded-2xl hover:bg-gray-50/70 border border-transparent hover:border-gray-100 transition-all duration-300 group"
-                  >
-                    <img 
-                      src={item.image} 
-                      alt={item.title}
-                      referrerPolicy="no-referrer"
-                      className="w-full sm:w-28 h-20 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
-                    />
-                    <div className="flex-1 text-center sm:text-left">
-                      <span className="text-[10px] font-bold uppercase text-brand-orange font-mono bg-brand-orange/5 px-2 py-0.5 rounded-full">
-                        {item.category}
-                      </span>
-                      <h4 className="font-display font-bold text-base text-brand-navy mt-1.5 mb-1 group-hover:text-brand-orange transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="text-[11px] text-gray-400 flex items-center justify-center sm:justify-start gap-1">
-                        <span>Clicking link opens external platform portfolio showcase...</span>
-                        <ExternalLink className="w-3 h-3 text-gray-300 inline" />
-                      </p>
-                    </div>
-                    <a
-                      href={
-                        activeShowcase.type === 'behance' ? 'https://www.behance.net' :
-                        activeShowcase.type === 'pinterest' ? 'https://www.pinterest.com' :
-                        activeShowcase.type === 'dribbble' ? 'https://dribbble.com' : 'https://www.youtube.com'
-                      }
+              <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto w-full">
+                {activeShowcase.items.map((item, idx) => {
+                  const targetUrl = 
+                    activeShowcase.type === 'behance' ? 'https://www.behance.net/ezydigitalhubltd' :
+                    activeShowcase.type === 'pinterest' ? 'https://www.pinterest.com/ezydigitalhub/' :
+                    activeShowcase.type === 'dribbble' ? 'https://dribbble.com/ezydigitalhub' : 'https://www.youtube.com/@ezydigitalhub';
+                  
+                  return (
+                    <a 
+                      key={idx}
+                      href={targetUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="shrink-0 bg-brand-navy text-white text-xs px-4 py-2 rounded-full hover:bg-brand-orange transition-colors"
+                      className="flex flex-col sm:flex-row gap-4 items-center p-3 rounded-2xl hover:bg-gray-50/70 border border-transparent hover:border-gray-100 transition-all duration-300 group text-left w-full cursor-pointer"
                     >
-                      Visit
+                      <img 
+                        src={item.image} 
+                        alt={item.title}
+                        referrerPolicy="no-referrer"
+                        className="w-full sm:w-28 h-20 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                      />
+                      <div className="flex-1 text-center sm:text-left">
+                        <span className="text-[10px] font-bold uppercase text-brand-orange font-mono bg-brand-orange/5 px-2 py-0.5 rounded-full">
+                          {item.category}
+                        </span>
+                        <h4 className="font-display font-bold text-base text-brand-navy mt-1.5 mb-1 group-hover:text-brand-orange transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-[10px] text-gray-400 flex items-center justify-center sm:justify-start gap-1">
+                          <span>Click to see original showcase on {activeShowcase.type}...</span>
+                          <ExternalLink className="w-3 h-3 text-gray-300 inline" />
+                        </p>
+                      </div>
+                      <span className="shrink-0 bg-brand-navy text-white text-xs px-4 py-2 rounded-full group-hover:bg-brand-orange transition-colors font-semibold">
+                        Visit Profile
+                      </span>
                     </a>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Mini disclaimer footer inside Modal */}
