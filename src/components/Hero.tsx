@@ -1,67 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, Globe, ExternalLink } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-
-// Define interactive preview content for the modal showcase of each card
-interface PortfolioShowcase {
-  type: 'behance' | 'pinterest' | 'dribbble' | 'youtube' | 'website';
-  title: string;
-  themeColor: string;
-  tabs: string[];
-  items: Array<{
-    title: string;
-    category: string;
-    image: string;
-    stats?: string;
-  }>;
-}
-
-const PREVIEWS: Record<string, PortfolioShowcase> = {
-  behance: {
-    type: 'behance',
-    title: 'Featured Branding Projects on Behance',
-    themeColor: 'bg-[#0057ff]',
-    tabs: ['Visual Identity', 'Packaging', 'Creative Art direction'],
-    items: [
-      { title: 'Aura Organic Skincare', category: 'Brand Guidelines & Identity', image: 'https://images.unsplash.com/photo-1608248597481-496100c80836?auto=format&fit=crop&q=80&w=800' },
-      { title: 'Vertex Cyber Security', category: 'Tech Positioning & Strategy', image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800' },
-      { title: 'Lumina Coffee Co.', category: 'Eco Package Design', image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800' }
-    ]
-  },
-  pinterest: {
-    type: 'pinterest',
-    title: 'Visual Direction & Mood Boards',
-    themeColor: 'bg-[#bd081c]',
-    tabs: ['Color Palettes', 'Modern Typography', 'Design Inspo'],
-    items: [
-      { title: 'Brutalist Editorial Trends', category: 'Mood Board', image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800' },
-      { title: 'Warm Organic Minimalist', category: 'Theme Colors', image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800' },
-      { title: 'Urban Tech Typography', category: 'Display Type', image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800' }
-    ]
-  },
-  dribbble: {
-    type: 'dribbble',
-    title: 'UI/UX Interactive Shots',
-    themeColor: 'bg-[#ea4c89]',
-    tabs: ['Mobile Apps', 'Web Interfaces', 'Micro-interactions'],
-    items: [
-      { title: 'Smart Finance Mobile App', category: 'UI/UX Design', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800' },
-      { title: 'SaaS Analytics Dashboard', category: 'Product Interface', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800' },
-      { title: 'Eco Energy Usage Tracker', category: 'Interaction Design', image: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=80&w=800' }
-    ]
-  },
-  youtube: {
-    type: 'youtube',
-    title: 'Video Breakdowns & Marketing Metrics',
-    themeColor: 'bg-[#ff0000]',
-    tabs: ['Case Studies', 'Brand Strategy', 'Growth Marketing'],
-    items: [
-      { title: 'How we scaled Mivo Cafe by 180%', category: 'Performance Case Study', image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800' },
-      { title: '3 Branding Mistakes Killing Startups', category: 'Educational Video', image: 'https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&q=80&w=800' },
-      { title: 'The Ultimate Web Conversion Guide', category: 'Growth Strategy', image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800' }
-    ]
-  }
-};
+import React from 'react';
+import { ArrowRight, Globe } from 'lucide-react';
 
 interface HeroProps {
   onExploreWork: () => void;
@@ -70,17 +8,9 @@ interface HeroProps {
 
 // Props are kept on the interface for the parent, but not consumed here yet.
 export default function Hero({}: HeroProps) {
-  const [activeShowcase, setActiveShowcase] = useState<PortfolioShowcase | null>(null);
-  const [activeTabIdx, setActiveTabIdx] = useState(0);
-
-  const openShowcase = (key: keyof typeof PREVIEWS) => {
-    setActiveShowcase(PREVIEWS[key]);
-    setActiveTabIdx(0);
-  };
-
   // Shared card container styling (the `group` class powers the group-hover:* children)
   const cardClass =
-    'group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer';
+    'group bg-white rounded-2xl border border-gray-100 p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300';
 
   return (
     <section className="relative bg-gradient-to-b from-white via-[#fafbfc] to-gray-50/50 pt-8 sm:pt-14 pb-20 overflow-hidden">
@@ -139,7 +69,7 @@ export default function Hero({}: HeroProps) {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
 
             {/* Behance Card */}
-            <div onClick={() => openShowcase('behance')} className={cardClass}>
+            <div className={cardClass}>
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#0057ff]/10 text-[#0057ff] flex items-center justify-center font-bold text-lg select-none">
                   Bē
@@ -158,18 +88,15 @@ export default function Hero({}: HeroProps) {
                 href="https://www.behance.net/ezydigitalhubltd"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="inline-block"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0057ff] hover:gap-2.5 transition-all"
               >
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0057ff] group-hover:gap-2.5 transition-all">
-                  <span>View Projects</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
+                <span>View Projects</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
             {/* Pinterest Card */}
-            <div onClick={() => openShowcase('pinterest')} className={cardClass}>
+            <div className={cardClass}>
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#bd081c]/10 text-[#bd081c] flex items-center justify-center select-none">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -190,7 +117,6 @@ export default function Hero({}: HeroProps) {
                 href="https://www.pinterest.com/ezydigitalhub/"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#bd081c] hover:gap-2.5 transition-all"
               >
                 <span>Explore Boards</span>
@@ -199,7 +125,7 @@ export default function Hero({}: HeroProps) {
             </div>
 
             {/* Dribbble Card */}
-            <div onClick={() => openShowcase('dribbble')} className={cardClass}>
+            <div className={cardClass}>
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#ea4c89]/10 text-[#ea4c89] flex items-center justify-center select-none">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -220,7 +146,6 @@ export default function Hero({}: HeroProps) {
                 href="https://dribbble.com/ezydigitalhub"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ea4c89] hover:gap-2.5 transition-all"
               >
                 <span>See Designs</span>
@@ -229,7 +154,7 @@ export default function Hero({}: HeroProps) {
             </div>
 
             {/* YouTube Card */}
-            <div onClick={() => openShowcase('youtube')} className={cardClass}>
+            <div className={cardClass}>
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#ff0000]/10 text-[#ff0000] flex items-center justify-center select-none">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -250,7 +175,6 @@ export default function Hero({}: HeroProps) {
                 href="https://www.youtube.com/@ezydigitalhub"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ff0000] hover:gap-2.5 transition-all"
               >
                 <span>Watch Videos</span>
@@ -330,111 +254,6 @@ export default function Hero({}: HeroProps) {
 
         </div>
       </div>
-
-      {/* PORTFOLIO SHOWCASE OVERLAY / MODAL (HIGH FIDELITY PREVIEWS) */}
-      <AnimatePresence>
-        {activeShowcase && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setActiveShowcase(null)}
-              className="absolute inset-0 bg-brand-navy/60 backdrop-blur-sm"
-            />
-
-            {/* Modal Box */}
-            <motion.div
-              initial={{ scale: 0.95, y: 15, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 15, opacity: 0 }}
-              className="relative w-full max-w-2xl bg-white rounded-3xl overflow-hidden shadow-2xl z-10 border border-gray-100 flex flex-col"
-            >
-              {/* Header */}
-              <div className="p-6 pb-4 border-b border-gray-50 flex justify-between items-center bg-gray-50/50">
-                <div className="flex items-center gap-2.5">
-                  <span className={`w-3.5 h-3.5 rounded-full ${activeShowcase.themeColor}`} />
-                  <h3 className="font-display font-bold text-lg text-brand-navy">
-                    {activeShowcase.title}
-                  </h3>
-                </div>
-                <button
-                  onClick={() => setActiveShowcase(null)}
-                  className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 font-bold transition-all flex items-center justify-center cursor-pointer"
-                >
-                  ✕
-                </button>
-              </div>
-
-              {/* Tabs list inside modal */}
-              <div className="flex border-b border-gray-100 bg-white px-6 overflow-x-auto gap-4">
-                {activeShowcase.tabs.map((tab, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveTabIdx(idx)}
-                    className={`py-3 text-xs font-bold tracking-wider uppercase border-b-2 transition-all whitespace-nowrap cursor-pointer ${
-                      activeTabIdx === idx
-                        ? 'border-brand-orange text-brand-orange'
-                        : 'border-transparent text-gray-400 hover:text-gray-600'
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-
-              {/* Showcase items list */}
-              <div className="p-6 space-y-4 max-h-[60vh] overflow-y-auto w-full">
-                {activeShowcase.items.map((item, idx) => {
-                  const targetUrl =
-                    activeShowcase.type === 'behance' ? 'https://www.behance.net/ezydigitalhubltd' :
-                    activeShowcase.type === 'pinterest' ? 'https://www.pinterest.com/ezydigitalhub/' :
-                    activeShowcase.type === 'dribbble' ? 'https://dribbble.com/ezydigitalhub' : 'https://www.youtube.com/@ezydigitalhub';
-
-                  return (
-                    <a
-                      key={idx}
-                      href={targetUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col sm:flex-row gap-4 items-center p-3 rounded-2xl hover:bg-gray-50/70 border border-transparent hover:border-gray-100 transition-all duration-300 group text-left w-full cursor-pointer"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        referrerPolicy="no-referrer"
-                        className="w-full sm:w-28 h-20 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
-                      />
-                      <div className="flex-1 text-center sm:text-left">
-                        <span className="text-[10px] font-bold uppercase text-brand-orange font-mono bg-brand-orange/5 px-2 py-0.5 rounded-full">
-                          {item.category}
-                        </span>
-                        <h4 className="font-display font-bold text-base text-brand-navy mt-1.5 mb-1 group-hover:text-brand-orange transition-colors">
-                          {item.title}
-                        </h4>
-                        <p className="text-[10px] text-gray-400 flex items-center justify-center sm:justify-start gap-1">
-                          <span>Click to see original showcase on {activeShowcase.type}...</span>
-                          <ExternalLink className="w-3 h-3 text-gray-300 inline" />
-                        </p>
-                      </div>
-                      <span className="shrink-0 bg-brand-navy text-white text-xs px-4 py-2 rounded-full group-hover:bg-brand-orange transition-colors font-semibold">
-                        Visit Profile
-                      </span>
-                    </a>
-                  );
-                })}
-              </div>
-
-              {/* Mini disclaimer footer inside Modal */}
-              <div className="p-4 bg-gray-50 border-t border-gray-100 text-center text-[10px] text-gray-400">
-                <span>Direct integration of platform feeds. Connected to user branding catalogs.</span>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
     </section>
   );
 }
