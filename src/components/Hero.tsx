@@ -165,9 +165,7 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
 
             {/* Pinterest Card */}
             <div 
-              onClick={() => openShowcase('pinterest')}
-              className="bg-white p-5 rounded-2xl border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-300 group cursor-pointer hover:border-red-100"
-            >
+                >
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#bd081c]/10 text-[#bd081c] flex items-center justify-center select-none">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
@@ -184,16 +182,19 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
               <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
                 Creative design inspiration, hand-crafted aesthetic mood boards & visual direction.
               </p>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#bd081c] group-hover:gap-2.5 transition-all">
-                <span>Explore Boards</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
+              <a
+  href="https://www.pinterest.com/ezydigitalhub/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#bd081c] hover:gap-2.5 transition-all"
+>
+  <span>Explore Boards</span>
+  <ArrowRight className="w-3.5 h-3.5" />
+</a>
             </div>
 
             {/* Dribbble Card */}
             <div 
-              onClick={() => openShowcase('dribbble')}
-              className="bg-white p-5 rounded-2xl border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-300 group cursor-pointer hover:border-pink-100"
             >
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#ea4c89]/10 text-[#ea4c89] flex items-center justify-center select-none">
@@ -211,17 +212,20 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
               <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
                 Modern UI/UX digital product interfaces, prototypes, & active micro-interactions.
               </p>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#ea4c89] group-hover:gap-2.5 transition-all">
-                <span>See Designs</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
+              <a
+  href="https://dribbble.com/ezydigitalhub"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ea4c89] hover:gap-2.5 transition-all"
+>
+  <span>See Designs</span>
+  <ArrowRight className="w-3.5 h-3.5" />
+</a>
             </div>
 
             {/* YouTube Card */}
             <div 
-              onClick={() => openShowcase('youtube')}
-              className="bg-white p-5 rounded-2xl border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-300 group cursor-pointer hover:border-red-100"
-            >
+             >
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#ff0000]/10 text-[#ff0000] flex items-center justify-center select-none">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
@@ -238,17 +242,20 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
               <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
                 Strategic video breakdowns, deep-dive branding case studies & real metrics.
               </p>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#ff0000] group-hover:gap-2.5 transition-all">
-                <span>Watch Videos</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
+              <a
+  href="https://www.youtube.com/@ezydigitalhub"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ff0000] hover:gap-2.5 transition-all"
+>
+  <span>Watch Videos</span>
+  <ArrowRight className="w-3.5 h-3.5" />
+</a>
             </div>
 
             {/* Main Website Card - Col Spanning with Laptop Mockup beside it */}
             <div 
-              onClick={onExploreMainWebsite}
-              className="bg-white p-6 rounded-2xl border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_32px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 sm:col-span-2 flex flex-col md:flex-row gap-6 items-center group cursor-pointer hover:border-orange-100"
-            >
+             >
               {/* Card info */}
               <div className="flex-1 space-y-3">
                 <div className="flex items-center gap-2">
@@ -268,10 +275,15 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
                   Learn more about our services, customer success maps, structured process diagrams, & custom client portals.
                 </p>
 
-                <div className="flex items-center gap-1.5 text-xs font-bold text-brand-orange group-hover:gap-2.5 transition-all pt-2">
-                  <span>Visit Website</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
+               <a
+  href="https://ezydigitalhub.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:gap-2.5 transition-all pt-2"
+>
+  <span>Visit Website</span>
+  <ArrowRight className="w-3.5 h-3.5" />
+</a>
               </div>
 
               {/* Laptop Graphic Mockup */}
