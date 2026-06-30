@@ -135,9 +135,7 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
             
             {/* Behance Card */}
             <div 
-              onClick={() => openShowcase('behance')}
-              className="bg-white p-5 rounded-2xl border border-gray-100/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_-4px_rgba(0,0,0,0.08)] transition-all duration-300 group cursor-pointer hover:border-blue-100"
-            >
+               >
               <div className="flex items-start justify-between mb-4">
                 <span className="w-10 h-10 rounded-xl bg-[#0057ff]/10 text-[#0057ff] flex items-center justify-center font-bold text-lg select-none">
                   Bē
@@ -152,10 +150,17 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
               <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
                 Explore our complete branding projects, logo systems, and visual guidelines.
               </p>
-              <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0057ff] group-hover:gap-2.5 transition-all">
-                <span>View Projects</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </div>
+            <a
+  href="https://www.behance.net/ezydigitalhubltd"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block"
+>
+  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0057ff] group-hover:gap-2.5 transition-all">
+    <span>View Projects</span>
+    <ArrowRight className="w-3.5 h-3.5" />
+  </div>
+</a>
             </div>
 
             {/* Pinterest Card */}
