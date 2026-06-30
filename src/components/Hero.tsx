@@ -130,203 +130,194 @@ export default function Hero({ onExploreWork, onExploreMainWebsite }: HeroProps)
             </div>
           </div>
 
-          {/* RIGHT COLUMN: HERO CARDS GRID */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            {/* Behance Card */}
-            <div 
-               >
-              <div className="flex items-start justify-between mb-4">
-                <span className="w-10 h-10 rounded-xl bg-[#0057ff]/10 text-[#0057ff] flex items-center justify-center font-bold text-lg select-none">
-                  Bē
-                </span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-blue-500 group-hover:bg-blue-50 transition-colors">
-                  Agency
-                </span>
-              </div>
-              <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
-                Behance
-              </h3>
-              <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
-                Explore our complete branding projects, logo systems, and visual guidelines.
-              </p>
-            <a
-  href="https://www.behance.net/ezydigitalhubltd"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block"
->
-  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0057ff] group-hover:gap-2.5 transition-all">
-    <span>View Projects</span>
-    <ArrowRight className="w-3.5 h-3.5" />
+         {/* RIGHT COLUMN: HERO CARDS GRID */}
+<div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+  {/* Behance Card */}
+  <div className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 p-6 transition-all duration-300">
+    <div className="flex items-start justify-between mb-4">
+      <span className="w-10 h-10 rounded-xl bg-[#0057ff]/10 text-[#0057ff] flex items-center justify-center font-bold text-lg select-none">
+        Bē
+      </span>
+      <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-blue-500 group-hover:bg-blue-50 transition-colors">
+        Agency
+      </span>
+    </div>
+    <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
+      Behance
+    </h3>
+    <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
+      Explore our complete branding projects, logo systems, and visual guidelines.
+    </p>
+    
+      href="https://www.behance.net/ezydigitalhubltd"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block"
+    >
+      <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0057ff] group-hover:gap-2.5 transition-all">
+        <span>View Projects</span>
+        <ArrowRight className="w-3.5 h-3.5" />
+      </div>
+    </a>
   </div>
-</a>
-            </div>
 
-            {/* Pinterest Card */}
-            <div 
-                >
-              <div className="flex items-start justify-between mb-4">
-                <span className="w-10 h-10 rounded-xl bg-[#bd081c]/10 text-[#bd081c] flex items-center justify-center select-none">
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
-                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.204 0 1.031.397 2.138.893 2.738.1.12.115.22.085.342-.093.388-.3.1.5-.429c0-.044-.148-.415-.178-.526-.299-1.072-1.123-2.587-1.123-4.162 0-3.391 2.463-6.505 7.108-6.505 3.731 0 6.631 2.659 6.631 6.213 0 3.707-2.336 6.691-5.584 6.691-1.09 0-2.114-.566-2.463-1.234 0 0-.538 2.046-.669 2.549-.243.935-.9 2.106-1.34 2.822 1.124.347 2.317.534 3.551.534 6.612 0 11.98-5.372 11.98-11.996C24.01 5.362 18.63 0 12.017 0z"/>
-                  </svg>
-                </span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-red-500 group-hover:bg-red-50 transition-colors">
-                  Inspiration
-                </span>
-              </div>
-              <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
-                Pinterest
-              </h3>
-              <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
-                Creative design inspiration, hand-crafted aesthetic mood boards & visual direction.
-              </p>
-              <a
-  href="https://www.pinterest.com/ezydigitalhub/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#bd081c] hover:gap-2.5 transition-all"
->
-  <span>Explore Boards</span>
-  <ArrowRight className="w-3.5 h-3.5" />
-</a>
-            </div>
+  {/* Pinterest Card */}
+  <div className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 p-6 transition-all duration-300">
+    <div className="flex items-start justify-between mb-4">
+      <span className="w-10 h-10 rounded-xl bg-[#bd081c]/10 text-[#bd081c] flex items-center justify-center select-none">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
+          <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.204 0 1.031.397 2.138.893 2.738.1.12.115.22.085.342-.093.388-.3.1.5-.429c0-.044-.148-.415-.178-.526-.299-1.072-1.123-2.587-1.123-4.162 0-3.391 2.463-6.505 7.108-6.505 3.731 0 6.631 2.659 6.631 6.213 0 3.707-2.336 6.691-5.584 6.691-1.09 0-2.114-.566-2.463-1.234 0 0-.538 2.046-.669 2.549-.243.935-.9 2.106-1.34 2.822 1.124.347 2.317.534 3.551.534 6.612 0 11.98-5.372 11.98-11.996C24.01 5.362 18.63 0 12.017 0z"/>
+        </svg>
+      </span>
+      <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-red-500 group-hover:bg-red-50 transition-colors">
+        Inspiration
+      </span>
+    </div>
+    <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
+      Pinterest
+    </h3>
+    <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
+      Creative design inspiration, hand-crafted aesthetic mood boards & visual direction.
+    </p>
+    
+      href="https://www.pinterest.com/ezydigitalhub/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#bd081c] hover:gap-2.5 transition-all"
+    >
+      <span>Explore Boards</span>
+      <ArrowRight className="w-3.5 h-3.5" />
+    </a>
+  </div>
 
-            {/* Dribbble Card */}
-            <div 
-            >
-              <div className="flex items-start justify-between mb-4">
-                <span className="w-10 h-10 rounded-xl bg-[#ea4c89]/10 text-[#ea4c89] flex items-center justify-center select-none">
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
-                    <path d="M12 .024C5.385.024 0 5.41 0 12.024 0 18.64 5.385 24 12 24c6.615 0 12-5.36 12-11.976C24 5.41 18.615.024 12 .024zm8.47 5.176c1.378 1.666 2.051 3.69 2.015 5.854-.015.015-.494-.15-.973-.314-1.996-.69-4.015-1.045-6.074-1.045-.254 0-.523.015-.778.03 2.094-3.321 4.316-5.462 5.811-4.525zm-9.01.523c.314.15.598.314.867.493-2.184 3.32-4.511 5.372-7.016 6.13-.508-1.554-.69-3.23-.493-4.887 1.571-1.016 4.318-2.614 6.642-1.736zm-6.52 7.74c2.259-.69 4.346-2.525 6.327-5.514.135-.21.27-.403.404-.598A33.193 33.193 0 0 1 18.23 11a36.96 36.96 0 0 0-3.38 7.323c-.224-.135-.434-.284-.658-.433-2.155-1.465-4.586-2.227-7.234-2.227h-.793a10.05 10.05 0 0 1-.225-2.2zM12 21.976c-2.422 0-4.665-.96-6.326-2.525.134 0 .284.015.433.015 2.378 0 4.542.718 6.446 2.002-.134.18-.284.344-.433.508h-.12zm2.064-.956A35.08 35.08 0 0 1 17.3 14c1.196.478 2.302 1.076 3.288 1.778-1.405 2.51-3.957 4.414-6.945 4.885l-.578.358z"/>
-                  </svg>
-                </span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-pink-500 group-hover:bg-pink-50 transition-colors">
-                  Portfolio
-                </span>
-              </div>
-              <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
-                Dribbble
-              </h3>
-              <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
-                Modern UI/UX digital product interfaces, prototypes, & active micro-interactions.
-              </p>
-              <a
-  href="https://dribbble.com/ezydigitalhub"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ea4c89] hover:gap-2.5 transition-all"
->
-  <span>See Designs</span>
-  <ArrowRight className="w-3.5 h-3.5" />
-</a>
-            </div>
+  {/* Dribbble Card */}
+  <div className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 p-6 transition-all duration-300">
+    <div className="flex items-start justify-between mb-4">
+      <span className="w-10 h-10 rounded-xl bg-[#ea4c89]/10 text-[#ea4c89] flex items-center justify-center select-none">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
+          <path d="M12 .024C5.385.024 0 5.41 0 12.024 0 18.64 5.385 24 12 24c6.615 0 12-5.36 12-11.976C24 5.41 18.615.024 12 .024zm8.47 5.176c1.378 1.666 2.051 3.69 2.015 5.854-.015.015-.494-.15-.973-.314-1.996-.69-4.015-1.045-6.074-1.045-.254 0-.523.015-.778.03 2.094-3.321 4.316-5.462 5.811-4.525zm-9.01.523c.314.15.598.314.867.493-2.184 3.32-4.511 5.372-7.016 6.13-.508-1.554-.69-3.23-.493-4.887 1.571-1.016 4.318-2.614 6.642-1.736zm-6.52 7.74c2.259-.69 4.346-2.525 6.327-5.514.135-.21.27-.403.404-.598A33.193 33.193 0 0 1 18.23 11a36.96 36.96 0 0 0-3.38 7.323c-.224-.135-.434-.284-.658-.433-2.155-1.465-4.586-2.227-7.234-2.227h-.793a10.05 10.05 0 0 1-.225-2.2zM12 21.976c-2.422 0-4.665-.96-6.326-2.525.134 0 .284.015.433.015 2.378 0 4.542.718 6.446 2.002-.134.18-.284.344-.433.508h-.12zm2.064-.956A35.08 35.08 0 0 1 17.3 14c1.196.478 2.302 1.076 3.288 1.778-1.405 2.51-3.957 4.414-6.945 4.885l-.578.358z"/>
+        </svg>
+      </span>
+      <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-pink-500 group-hover:bg-pink-50 transition-colors">
+        Portfolio
+      </span>
+    </div>
+    <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
+      Dribbble
+    </h3>
+    <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
+      Modern UI/UX digital product interfaces, prototypes, & active micro-interactions.
+    </p>
+    
+      href="https://dribbble.com/ezydigitalhub"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ea4c89] hover:gap-2.5 transition-all"
+    >
+      <span>See Designs</span>
+      <ArrowRight className="w-3.5 h-3.5" />
+    </a>
+  </div>
 
-            {/* YouTube Card */}
-            <div 
-             >
-              <div className="flex items-start justify-between mb-4">
-                <span className="w-10 h-10 rounded-xl bg-[#ff0000]/10 text-[#ff0000] flex items-center justify-center select-none">
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
-                    <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                  </svg>
-                </span>
-                <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-red-500 group-hover:bg-red-50 transition-colors">
-                  Insights
-                </span>
-              </div>
-              <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
-                YouTube
-              </h3>
-              <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
-                Strategic video breakdowns, deep-dive branding case studies & real metrics.
-              </p>
-              <a
-  href="https://www.youtube.com/@ezydigitalhub"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ff0000] hover:gap-2.5 transition-all"
->
-  <span>Watch Videos</span>
-  <ArrowRight className="w-3.5 h-3.5" />
-</a>
-            </div>
+  {/* YouTube Card */}
+  <div className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 p-6 transition-all duration-300">
+    <div className="flex items-start justify-between mb-4">
+      <span className="w-10 h-10 rounded-xl bg-[#ff0000]/10 text-[#ff0000] flex items-center justify-center select-none">
+        <svg viewBox="0 0 24 24" fill="currentColor" className="w-5.5 h-5.5">
+          <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </span>
+      <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full group-hover:text-red-500 group-hover:bg-red-50 transition-colors">
+        Insights
+      </span>
+    </div>
+    <h3 className="font-display font-bold text-lg text-brand-navy mb-1">
+      YouTube
+    </h3>
+    <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed mb-5">
+      Strategic video breakdowns, deep-dive branding case studies & real metrics.
+    </p>
+    
+      href="https://www.youtube.com/@ezydigitalhub"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ff0000] hover:gap-2.5 transition-all"
+    >
+      <span>Watch Videos</span>
+      <ArrowRight className="w-3.5 h-3.5" />
+    </a>
+  </div>
 
-            {/* Main Website Card - Col Spanning with Laptop Mockup beside it */}
-            <div 
-             >
-              {/* Card info */}
-              <div className="flex-1 space-y-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center">
-                    <Globe className="w-4 h-4" />
-                  </span>
-                  <span className="text-[10px] uppercase font-extrabold tracking-wider text-brand-orange">
-                    Agency HQ
-                  </span>
-                </div>
-                
-                <h3 className="font-display font-extrabold text-xl text-brand-navy">
-                  Our Main Website
-                </h3>
-                
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  Learn more about our services, customer success maps, structured process diagrams, & custom client portals.
-                </p>
-
-               <a
-  href="https://ezydigitalhub.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:gap-2.5 transition-all pt-2"
->
-  <span>Visit Website</span>
-  <ArrowRight className="w-3.5 h-3.5" />
-</a>
-              </div>
-
-              {/* Laptop Graphic Mockup */}
-              <div className="w-full md:w-56 shrink-0 relative bg-slate-50 border border-slate-100 p-2 rounded-xl group-hover:scale-[1.03] transition-transform duration-300 select-none">
-                <div className="bg-brand-navy rounded-lg p-2.5 shadow-md flex flex-col justify-between aspect-[1.5/1]">
-                  <div className="flex items-center justify-between">
-                    <span className="font-display text-[8px] font-bold text-white tracking-widest leading-none">
-                      EZY
-                    </span>
-                    <span className="text-[5px] text-gray-400 font-mono tracking-widest uppercase">
-                      SECURE PORTAL
-                    </span>
-                  </div>
-                  
-                  <div className="my-auto text-left py-1">
-                    <p className="text-[8px] text-gray-400 font-sans leading-tight">We Build Brands</p>
-                    <p className="text-[10px] font-extrabold text-white font-display leading-tight">
-                      That Actually <span className="text-brand-orange">Grow.</span>
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between border-t border-white/5 pt-1">
-                    <div className="flex gap-0.5">
-                      <span className="w-1 h-1 rounded-full bg-white/30" />
-                      <span className="w-1 h-1 rounded-full bg-white/30" />
-                      <span className="w-1 h-1 rounded-full bg-white/30" />
-                    </div>
-                    <span className="text-[5px] text-brand-orange font-bold uppercase tracking-wider">
-                      VISIT LIVE ➔
-                    </span>
-                  </div>
-                </div>
-                {/* Laptop base line */}
-                <div className="h-1 bg-slate-300 rounded-b-md mt-1 mx-2" />
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
+  {/* Main Website Card - spans 2 cols, content beside laptop mockup */}
+  <div className="group sm:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg p-6 flex flex-col md:flex-row items-start gap-6 transition-all duration-300">
+    {/* Card info */}
+    <div className="flex-1 space-y-3">
+      <div className="flex items-center gap-2">
+        <span className="w-8 h-8 rounded-lg bg-brand-orange/10 text-brand-orange flex items-center justify-center">
+          <Globe className="w-4 h-4" />
+        </span>
+        <span className="text-[10px] uppercase font-extrabold tracking-wider text-brand-orange">
+          Agency HQ
+        </span>
       </div>
 
+      <h3 className="font-display font-extrabold text-xl text-brand-navy">
+        Our Main Website
+      </h3>
+
+      <p className="text-xs text-gray-500 leading-relaxed">
+        Learn more about our services, customer success maps, structured process diagrams, & custom client portals.
+      </p>
+
+      
+        href="https://ezydigitalhub.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:gap-2.5 transition-all pt-2"
+      >
+        <span>Visit Website</span>
+        <ArrowRight className="w-3.5 h-3.5" />
+      </a>
+    </div>
+
+    {/* Laptop Graphic Mockup */}
+    <div className="w-full md:w-56 shrink-0 relative bg-slate-50 border border-slate-100 p-2 rounded-xl group-hover:scale-[1.03] transition-transform duration-300 select-none">
+      <div className="bg-brand-navy rounded-lg p-2.5 shadow-md flex flex-col justify-between aspect-[1.5/1]">
+        <div className="flex items-center justify-between">
+          <span className="font-display text-[8px] font-bold text-white tracking-widest leading-none">
+            EZY
+          </span>
+          <span className="text-[5px] text-gray-400 font-mono tracking-widest uppercase">
+            SECURE PORTAL
+          </span>
+        </div>
+
+        <div className="my-auto text-left py-1">
+          <p className="text-[8px] text-gray-400 font-sans leading-tight">We Build Brands</p>
+          <p className="text-[10px] font-extrabold text-white font-display leading-tight">
+            That Actually <span className="text-brand-orange">Grow.</span>
+          </p>
+        </div>
+
+        <div className="flex items-center justify-between border-t border-white/5 pt-1">
+          <div className="flex gap-0.5">
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+            <span className="w-1 h-1 rounded-full bg-white/30" />
+          </div>
+          <span className="text-[5px] text-brand-orange font-bold uppercase tracking-wider">
+            VISIT LIVE ➔
+          </span>
+        </div>
+      </div>
+      {/* Laptop base line */}
+      <div className="h-1 bg-slate-300 rounded-b-md mt-1 mx-2" />
+    </div>
+
+  </div>
+
+</div>
       {/* PORTFOLIO SHOWCASE OVERLAY / MODAL (HIGH FIDELITY PREVIEWS) */}
       <AnimatePresence>
         {activeShowcase && (
